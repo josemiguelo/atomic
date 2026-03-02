@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# prevent this service from be executed for stantdard linux users
+echo 'Checking user..'
+CURRENT_USER=$(whoami)
+if [[ "$CURRENT_USER" == "sddm" || "$CURRENT_USER" == "root" || "$CURRENT_USER" == gdm* ]]; then
+  echo "User is $CURRENT_USER, skipping post-install-checker..." >&2
+  exit 1
+fi
