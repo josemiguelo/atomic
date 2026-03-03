@@ -33,8 +33,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - base_image: bluefin-dx
-            image_suffix: ""
+          # - base_image: bluefin-dx
+          #   image_suffix: ""
           - base_image: bluefin-dx-nvidia-open
             image_suffix: "-nvidia"
 
