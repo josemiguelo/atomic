@@ -72,7 +72,7 @@ TOML files in `disk_config/` configure bootc-image-builder for different output 
 
 Run `just --list` to see all available recipes. Key workflows:
 
-- `just build` — Build the container image locally with Podman (defaults to `bluefin-dx`; pass `base_image=bluefin-dx-nvidia-open` for the Nvidia variant).
+- `just build` — Build the container image locally with Podman (defaults to `bluefin-dx`; set `BASE_IMAGE=bluefin-dx-nvidia-open` env var for the Nvidia variant).
 - `just lint` — Run shellcheck on all shell scripts.
 - `just format` — Run shfmt on all shell scripts.
 - `just check` — Validate just file syntax.

@@ -1,5 +1,6 @@
 export image_name := env("IMAGE_NAME", "stellasaur")
 export default_tag := env("DEFAULT_TAG", "latest")
+export base_image := env("BASE_IMAGE", "bluefin-dx")
 export bib_image := env("BIB_IMAGE", "quay.io/centos-bootc/bootc-image-builder:latest")
 
 alias build-vm := build-qcow2
@@ -88,7 +89,7 @@ sudoif command *args:
 #
 
 # Build the image using the specified parameters
-build $target_image=image_name $tag=default_tag $base_image="bluefin-dx":
+build $target_image=image_name $tag=default_tag:
     #!/usr/bin/env bash
 
     BUILD_ARGS=()
