@@ -1,10 +1,11 @@
+ARG BASE_IMAGE=bluefin-dx
+
 FROM busybox AS ctx
 
 # main path scripts
 COPY build_files /build_scripts
 RUN chmod +x /build_scripts/*.sh
 
-ARG BASE_IMAGE=bluefin-dx
 FROM ghcr.io/ublue-os/${BASE_IMAGE}:stable
 
 ## Make /opt immutable and be able to be used by the package manager.
