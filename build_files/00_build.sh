@@ -2,11 +2,11 @@
 
 set -ouex pipefail
 
-# execute all scripts under build_files
-while IFS= read -r script; do
+mapfile -t scripts < <(printf '%s\n' /ctx/build_scripts/[0-9]*.sh | sort -V)
+for script in "${scripts[@]}"; do
   [[ "$(basename "$script")" == "00_build.sh" ]] && continue
   "$script"
-done < <(printf '%s\n' /ctx/build_scripts/[0-9]*.sh | sort -V)
+done
 
 echo "::group:: === enabling services ==="
 systemctl enable podman.socket
