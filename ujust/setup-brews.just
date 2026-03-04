@@ -18,6 +18,7 @@ setup-brews:
   brew install tree-sitter-cli
   brew install tmux
   brew install git-delta
+  brew install lazygit
 
   brew cleanup
 
