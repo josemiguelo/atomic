@@ -21,6 +21,7 @@ setup-brews:
   brew install git-delta
   brew install lazygit
   brew install lazydocker
+  brew install anomalyco/tap/opencode
 
   brew cleanup
 
