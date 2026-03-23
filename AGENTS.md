@@ -22,7 +22,7 @@ GitHub Actions workflows handle building the container image, pushing to GHCR, a
 
 ### Systemd services
 
-Service units in `services/` are installed into the image. They handle tasks like post-install repo cloning and system group management. See `services/README.md` for how they work and how to add new ones.
+Service units live in `services/user/` (per-login user services installed to `/usr/lib/systemd/user/`) and `services/system/` (boot-time system services installed to `/usr/lib/systemd/system/`). See `services/README.md` for how they work and how to add new ones.
 
 ### Disk configs
 

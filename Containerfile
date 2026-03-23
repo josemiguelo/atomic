@@ -16,7 +16,8 @@ COPY system_files/usr/bin /usr/bin/
 RUN chmod +x /usr/bin/*
 
 # systemd services
-COPY services /usr/lib/systemd/user/
+COPY services/user/ /usr/lib/systemd/user/
+COPY services/system/ /usr/lib/systemd/system/
 
 # just files
 COPY ujust/60-custom.just /usr/share/ublue-os/just/60-custom.just

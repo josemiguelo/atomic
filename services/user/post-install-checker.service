@@ -5,7 +5,7 @@ After=graphical-session.target
 [Service]
 Type=simple
 TimeoutStartSec=0
-ExecStartPre=/usr/bin/post-install-checker-pre
+ExecCondition=/usr/bin/post-install-checker-pre
 ExecStart=/usr/bin/post-install-checker
 RemainAfterExit=no
 
