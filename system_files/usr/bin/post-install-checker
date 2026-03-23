@@ -1,4 +1,6 @@
-#! /bin/bash
+#!/bin/bash
+
+set -euo pipefail
 
 # clone stellasaur repo
 BASE_PATH="$HOME/Repos/gh/josemiguelo"
