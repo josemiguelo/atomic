@@ -1,5 +1,5 @@
 [group('PostInstall')]
-setup-asdf:
+setup-chezmoi:
   #!/bin/bash
   set -ex
 
