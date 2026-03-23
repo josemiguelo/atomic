@@ -1,5 +1,5 @@
 [group('PostInstall')]
-download-dotfiles:
+setup-asdf:
   #!/bin/bash
   set -ex
 
