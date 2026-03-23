@@ -281,12 +281,12 @@ run-vm-iso $target_image=("localhost/" + image_name) $tag=default_tag: && (_run-
 
 # Run a virtual machine using systemd-vmspawn
 [group('Run Virtal Machine')]
-spawn-vm rebuild="0" type="qcow2" ram="6G":
+spawn-vm $target_image=("localhost/" + image_name) $tag=default_tag rebuild="0" type="qcow2" ram="6G":
     #!/usr/bin/env bash
 
     set -euo pipefail
 
-    [ "{{ rebuild }}" -eq 1 ] && echo "Rebuilding the ISO" && just build-vm {{ rebuild }} {{ type }}
+    [ "{{ rebuild }}" -eq 1 ] && echo "Rebuilding the image" && just build-vm "{{ target_image }}" "{{ tag }}"
 
     systemd-vmspawn \
       -M "bootc-image" \
