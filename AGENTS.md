@@ -43,7 +43,7 @@ TOML files in `disk_config/` configure bootc-image-builder for different output 
 
 ### Shell scripts
 
-- All scripts in `build_files/` must start with `#!/usr/bin/env bash` and use `set -euo pipefail` (or `set -eoux pipefail` for verbose builds).
+- All scripts in `build_files/` must start with `#!/bin/bash` and use `set -euo pipefail` (or `set -eoux pipefail` for verbose builds).
 - Use `dnf5` for package operations, not `dnf`.
 - Scripts are numbered with zero-padded prefixes in increments of 10 (e.g., `10_`, `20_`, `30_`). Use a gap or a sub-number (e.g., `141_`) if inserting between existing scripts.
 - Each script should handle exactly one concern (one application, one repo, one config).

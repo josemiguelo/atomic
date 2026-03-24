@@ -16,7 +16,7 @@ Scripts use zero-padded numeric prefixes followed by a descriptive name: `<numbe
 2. Create the file as `<number>_<descriptive-name>.sh`.
 3. Start with:
    ```bash
-   #!/usr/bin/env bash
+   #!/bin/bash
 
    set -euo pipefail
 
