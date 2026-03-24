@@ -35,7 +35,7 @@ setup-asdf:
     curl -sSL "$URL" | tar -xz -C "$BIN_DIR" asdf
 
     chmod +x "${BIN_DIR}/asdf"
-    chmod -R 777 "$ASDF_DATA_DIR"
+    chmod -R u+rwX,go+rX,go-w "$ASDF_DATA_DIR"
 
     echo "🚀 Installation complete. asdf binary placed in ${BIN_DIR}/asdf."
     echo "version $(asdf --version)"
