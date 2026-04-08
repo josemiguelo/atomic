@@ -7,7 +7,7 @@ alias build-vm := build-qcow2
 alias rebuild-vm := rebuild-qcow2
 alias run-vm := run-vm-qcow2
 
-export SUDO_ASKPASS := "/usr/libexec/openssh/gnome-ssh-askpass"
+export SUDO_ASKPASS := env("SSH_ASKPASS", "/usr/libexec/openssh/gnome-ssh-askpass")
 
 [private]
 default:
