@@ -1,3 +1,0 @@
-[submodule "system_files/usr/share/gnome-shell/extensions/tmp/ddcutil"]
-	path = system_files/usr/share/gnome-shell/extensions/tmp/ddcutil
-	url = https://github.com/daitj/gnome-display-brightness-ddcutil

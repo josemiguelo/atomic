@@ -22,9 +22,6 @@ COPY services/system/ /usr/lib/systemd/system/
 # just files
 COPY ujust/60-custom.just /usr/share/ublue-os/just/60-custom.just
 
-COPY system_files/usr/share/gnome-shell/extensions/tmp/ddcutil/display-brightness-ddcutil@themightydeity.github.com \
-  /usr/share/gnome-shell/extensions/display-brightness-ddcutil@themightydeity.github.com
-
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
