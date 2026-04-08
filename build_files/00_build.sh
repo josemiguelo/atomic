@@ -11,7 +11,6 @@ done
 echo "::group:: === enabling services ==="
 systemctl enable podman.socket
 systemctl enable --global /usr/lib/systemd/user/post-install-checker.service
-systemctl enable /usr/lib/systemd/system/custom-groups.service
 echo "::endgroup::"
 
 dnf5 clean all
