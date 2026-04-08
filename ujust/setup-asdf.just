@@ -54,6 +54,7 @@ setup-asdf:
 
   if [ -f ~/.tool-versions ]; then
     $PLUGIN_MANAGER add-all
+    export CFLAGS="-std=gnu11" # for building python
     asdf install
   else
     echo "❌ ~/.tool-versions not found. There was a problem with the chezmoi setup..."

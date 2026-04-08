@@ -6,8 +6,8 @@ setup-git:
   DESIRED_EMAIL="josemiguelo.ochoa@gmail.com"
   DESIRED_NAME="Jose Miguel Ochoa"
 
-  CURRENT_EMAIL=$(git config --global user.email 2>/dev/null)
-  CURRENT_NAME=$(git config --global user.name 2>/dev/null)
+  CURRENT_EMAIL=$(git config --global user.email 2>/dev/null || true)
+  CURRENT_NAME=$(git config --global user.name 2>/dev/null || true)
 
   if [ -z "$CURRENT_EMAIL" ]; then
     echo "🚀 Setting git user.email to $DESIRED_EMAIL..."

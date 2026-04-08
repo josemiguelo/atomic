@@ -13,4 +13,13 @@ else
   echo "atomic repo already exists in $REPO_PATH"
 fi
 
+DESIRED_REMOTE="git@github.com:josemiguelo/atomic.git"
+CURRENT_REMOTE=$(cd "$REPO_PATH" && git remote get-url origin 2>/dev/null)
+if [ "$CURRENT_REMOTE" != "$DESIRED_REMOTE" ]; then
+  echo "🚀 Setting atomic git remote to $DESIRED_REMOTE..."
+  (cd "$REPO_PATH" && git remote set-url origin "$DESIRED_REMOTE" && echo "✅ remote set successfully")
+else
+  echo "✅ atomic git remote is already set correctly."
+fi
+
 echo 'Post install checker done!'
