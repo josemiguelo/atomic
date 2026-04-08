@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=bluefin-dx
+ARG BASE_IMAGE=bazzite-dx
 
 FROM busybox AS ctx
 

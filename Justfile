@@ -1,6 +1,6 @@
 export image_name := env("IMAGE_NAME", "stellasaur")
 export default_tag := env("DEFAULT_TAG", "latest")
-export base_image := env("BASE_IMAGE", "bluefin-dx")
+export base_image := env("BASE_IMAGE", "bazzite-dx")
 export bib_image := env("BIB_IMAGE", "quay.io/centos-bootc/bootc-image-builder:latest")
 
 alias build-vm := build-qcow2
