@@ -1,1 +1,1 @@
-import? "~/Repos/gh/josemiguelo/stellasaur/ujust/custom.just"
+import? "~/Repos/gh/josemiguelo/atomic/ujust/custom.just"

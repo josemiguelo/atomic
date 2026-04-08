@@ -1,16 +1,16 @@
 # AGENTS.md
 
-Guidelines for AI agents working in the stellasaur repository.
+Guidelines for AI agents working in the atomic repository.
 
 ## Project overview
 
-stellasaur is a custom bootc container image extending a Universal Blue Bluefin base. It produces a personalized Fedora Linux desktop that can be installed via `sudo bootc switch`. The image is built as a container with `podman build`, published to GHCR, and signed with cosign.
+atomic is a custom bootc container image extending a Universal Blue Bazzite base. It produces a personalized Fedora Linux desktop that can be installed via `sudo bootc switch`. The image is built as a container with `podman build`, published to GHCR, and signed with cosign.
 
 ## Architecture
 
 ### Build pipeline
 
-The `Containerfile` defines a multi-stage build parameterized by `BASE_IMAGE` (defaults to `bluefin-dx`). The first stage copies build scripts into a scratch context. The second stage starts from `ghcr.io/ublue-os/${BASE_IMAGE}:stable`, copies system files (scripts, services, ujust recipes, GNOME extensions) into the filesystem, then runs the orchestrator script `build_files/00_build.sh`. That orchestrator auto-discovers and invokes every other numbered script in `build_files/` in version-sorted order. The build finishes with `bootc container lint` to validate the image. CI uses a matrix strategy to build two variants: `bluefin-dx` (published as `stellasaur`) and `bluefin-dx-nvidia-open` (published as `stellasaur-nvidia`). Read the `Containerfile` and `build_files/00_build.sh` to understand the current build steps.
+The `Containerfile` defines a multi-stage build parameterized by `BASE_IMAGE` (defaults to `bazzite-dx`). The first stage copies build scripts into a scratch context. The second stage starts from `ghcr.io/ublue-os/${BASE_IMAGE}:stable`, copies system files (scripts, services, ujust recipes) into the filesystem, then runs the orchestrator script `build_files/00_build.sh`. That orchestrator auto-discovers and invokes every other numbered script in `build_files/` in version-sorted order. The build finishes with `bootc container lint` to validate the image. CI uses a matrix strategy to build two variants: `bazzite-dx` (published as `atomic`) and `bazzite-dx-nvidia` (published as `atomic-nvidia`). Read the `Containerfile` and `build_files/00_build.sh` to understand the current build steps.
 
 ### Post-install flow
 
@@ -30,7 +30,7 @@ TOML files in `disk_config/` configure bootc-image-builder for different output 
 
 ## Technology stack
 
-- **OS base**: Fedora (via Universal Blue / Bluefin)
+- **OS base**: Fedora (via Universal Blue / Bazzite)
 - **Image type**: bootc (OCI container as OS)
 - **Container tool**: Podman
 - **Package manager**: dnf5 (not dnf4)
@@ -72,7 +72,7 @@ TOML files in `disk_config/` configure bootc-image-builder for different output 
 
 Run `just --list` to see all available recipes. Key workflows:
 
-- `just build` — Build the container image locally with Podman (defaults to `bluefin-dx`; set `BASE_IMAGE=bluefin-dx-nvidia-open` env var for the Nvidia variant).
+- `just build` — Build the container image locally with Podman (defaults to `bazzite-dx`; set `BASE_IMAGE=bazzite-dx-nvidia` env var for the Nvidia variant).
 - `just lint` — Run shellcheck on all shell scripts.
 - `just format` — Run shfmt on all shell scripts.
 - `just check` — Validate just file syntax.

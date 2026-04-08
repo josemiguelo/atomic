@@ -1,13 +1,13 @@
-# stellasaur
+# atomic
 
-> A custom bootc image that integrates my personal tooling into Bluefin DX (Universal Blue)
+> A custom bootc image that integrates my personal tooling into Bazzite (Universal Blue)
 
-stellasaur builds personalized Fedora-based Linux desktop images using bootc and containers. It adds packages, desktop applications, GNOME extensions, and systemd services on top of a Universal Blue base image. Two variants are produced: a standard `bluefin-dx` image and an Nvidia variant (`bluefin-dx-nvidia-open`). After installation, ujust recipes handle post-install user setup.
+atomic builds personalized Fedora-based Linux desktop images using bootc and containers. It adds packages, desktop applications, and systemd services on top of a Universal Blue base image. Two variants are produced: a standard `bazzite-dx` image and an Nvidia variant (`bazzite-dx-nvidia`). After installation, ujust recipes handle post-install user setup.
 
 ## Key concepts
 
 - **bootc**: Boot containers — the OS is a container image that can be switched/updated atomically via `sudo bootc switch`.
-- **Universal Blue / Bluefin**: Community Fedora-based images. stellasaur extends the Bluefin developer edition with Nvidia drivers.
+- **Universal Blue / Bazzite**: Community Fedora-based images. atomic extends the Bazzite developer edition with custom tooling.
 - **Build scripts**: Numbered shell scripts in `build_files/` run during `podman build` to install packages and configure the system. See `build_files/README.md`.
 - **ujust recipes**: Post-install automation run by the user via `ujust do-post-install`. See `ujust/README.md`.
 - **Post-install checker**: A systemd user service that clones this repo on first graphical login so ujust recipes are available. 

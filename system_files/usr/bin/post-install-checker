@@ -2,15 +2,15 @@
 
 set -euo pipefail
 
-# clone stellasaur repo
+# clone atomic repo
 BASE_PATH="$HOME/Repos/gh/josemiguelo"
-REPO_PATH="$BASE_PATH/stellasaur"
+REPO_PATH="$BASE_PATH/atomic"
 if [ ! -d "$REPO_PATH" ]; then
-  echo "Cloning stellasaur repo into $REPO_PATH"
+  echo "Cloning atomic repo into $REPO_PATH"
   mkdir -p "$BASE_PATH"
-  git clone --recurse-submodules https://github.com/josemiguelo/stellasaur.git "$REPO_PATH"
+  git clone --recurse-submodules https://github.com/josemiguelo/atomic.git "$REPO_PATH"
 else
-  echo "Stellasaur repo already exists in $REPO_PATH"
+  echo "atomic repo already exists in $REPO_PATH"
 fi
 
 echo 'Post install checker done!'
