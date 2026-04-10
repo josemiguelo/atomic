@@ -8,6 +8,7 @@ import "./setup-git.just"
 import "./download-fonts.just"
 import "./setup-ngrok.just"
 import "./setup-completions.just"
+import "./install-cursor.just"
 
 [group('PostInstall')]
 do-post-install: \
@@ -20,4 +21,5 @@ do-post-install: \
   setup-git \
   download-fonts \
   setup-ngrok \
-  setup-completions
+  setup-completions \
+  install-cursor
