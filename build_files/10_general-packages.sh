@@ -14,4 +14,6 @@ GENERAL_PACKAGES=(
 )
 dnf5 install -y "${GENERAL_PACKAGES[@]}"
 
+rm -f /etc/xdg/autostart/solaar.desktop
+
 echo "::endgroup::"
