@@ -23,6 +23,7 @@ setup-brews:
   brew install lazydocker
   brew install starship
   brew install anomalyco/tap/opencode
+  brew install yazi
 
   brew cleanup
 
