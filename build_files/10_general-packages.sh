@@ -10,8 +10,8 @@ GENERAL_PACKAGES=(
   "okular"
   "dbus-devel"
   "dnf-command(copr)"
+  "solaar"
 )
 dnf5 install -y "${GENERAL_PACKAGES[@]}"
 
 echo "::endgroup::"
-

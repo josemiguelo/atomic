@@ -30,4 +30,3 @@ echo "Installing dev packages ${#DEV_PACKAGES[@]} ..."
 dnf5 install -y "${DEV_PACKAGES[@]}"
 
 echo "::endgroup::"
-

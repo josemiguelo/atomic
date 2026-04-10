@@ -17,4 +17,3 @@ gpgkey=https://packages.microsoft.com/keys/microsoft.asc" |
 dnf5 install -y code
 
 echo "::endgroup::"
-

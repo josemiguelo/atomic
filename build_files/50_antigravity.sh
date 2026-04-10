@@ -15,4 +15,3 @@ dnf5 makecache --repo=antigravity-rpm
 dnf5 install -y antigravity
 
 echo "::endgroup::"
-

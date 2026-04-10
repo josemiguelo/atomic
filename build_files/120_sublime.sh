@@ -10,4 +10,3 @@ dnf5 makecache --repo=sublime-text
 dnf5 install -y sublime-text
 
 echo "::endgroup::"
-

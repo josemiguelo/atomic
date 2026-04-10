@@ -19,4 +19,3 @@ dnf5 makecache --repo=1password
 dnf5 install -y 1password
 
 echo "::endgroup::"
-

@@ -10,4 +10,3 @@ curl -1sLf -o /etc/yum.repos.d/teams-for-linux.repo https://repo.teamsforlinux.d
 dnf5 -y install teams-for-linux
 
 echo "::endgroup::"
-
