@@ -9,6 +9,7 @@ import "./download-fonts.just"
 import "./setup-ngrok.just"
 import "./setup-completions.just"
 import "./install-cursor.just"
+import "./setup-utils.just"
 
 [group('PostInstall')]
 do-post-install: \
@@ -22,4 +23,5 @@ do-post-install: \
   download-fonts \
   setup-ngrok \
   setup-completions \
-  install-cursor
+  install-cursor \
+  setup-utils
