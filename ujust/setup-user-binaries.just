@@ -1,5 +1,5 @@
 [group('PostInstall')]
-setup-utils:
+setup-user-binaries:
   #!/bin/bash
   set -ex
 
