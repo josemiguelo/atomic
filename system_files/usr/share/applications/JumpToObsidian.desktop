@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=Jump to the Obsidian app with jumpkwapp
+Exec=/var/home/josemiguel/.local/bin/jumpkwapp -f obsidian -c 'flatpak run md.obsidian.Obsidian' -t -d
+Icon=md.obsidian.Obsidian
+Name=Jump to Obsidian
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=false
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
