@@ -2,6 +2,8 @@
 
 set -ouex pipefail
 
+# /ctx/build_scripts/my_script.sh
+
 mapfile -t scripts < <(printf '%s\n' /ctx/build_scripts/[0-9]*.sh | sort -V)
 for script in "${scripts[@]}"; do
   [[ "$(basename "$script")" == "00_build.sh" ]] && continue
