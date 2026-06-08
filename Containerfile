@@ -12,8 +12,7 @@ FROM ghcr.io/ublue-os/${BASE_IMAGE}:stable
 RUN rm /opt && mkdir /opt
 
 # user scripts
-COPY system_files/usr/bin /usr/bin/
-RUN chmod +x /usr/bin/*
+COPY --chmod=755 system_files/usr/bin /usr/bin/
 
 # desktop entries
 COPY system_files/usr/share/applications /usr/share/applications/
