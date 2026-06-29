@@ -11,6 +11,10 @@ GENERAL_PACKAGES=(
   "dbus-devel"
   "dnf-command(copr)"
   "solaar"
+  "plasma-oxygen"
+  "oxygen-icon-theme"
+  "oxygen-sound-theme"
+  "oxygen-cursor-themes"
 )
 dnf5 install -y "${GENERAL_PACKAGES[@]}"
 
