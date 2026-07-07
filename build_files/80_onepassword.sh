@@ -7,6 +7,7 @@ echo "::group:: ===$(basename "$0")==="
 curl -fsSL https://downloads.1password.com/linux/keys/1password.asc -o /tmp/1password.asc
 rpm --import /tmp/1password.asc --import https://downloads.1password.com/linux/keys/1password.asc
 dnf5 config-manager addrepo \
+  --overwrite \
   --id=1password \
   --set=name="1Password Stable Channel" \
   --set=baseurl="https://downloads.1password.com/linux/rpm/stable/\$basearch" \

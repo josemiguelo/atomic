@@ -11,6 +11,9 @@ setup-asdf:
   ASDF_DATA_DIR="$HOME/.asdf"
   CHEZMOI_DIR="$HOME/.local/share/chezmoi"
 
+  # Ensure local bin is in PATH for the script
+  export PATH="$BIN_DIR:$PATH"
+
   if command -v asdf >/dev/null 2>&1; then
     echo "✅ asdf version $(asdf --version) is already installed. Skipping download."
   else

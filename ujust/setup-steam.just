@@ -3,6 +3,11 @@ setup-steam:
   #!/bin/bash
   set -ex
 
+  if [ ! -f /run/ostree-booted ]; then
+    echo "[INFO] Not running on a bootc/atomic system. Skipping user binaries setup."
+    exit 0
+  fi
+
   # fix steam.desktop
   STEAM_AUTOSTART="$HOME/.config/autostart/steam.desktop"
   if [ -f "$STEAM_AUTOSTART" ]; then

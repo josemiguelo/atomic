@@ -4,14 +4,18 @@ setup-ssh:
   set -ex
 
   SSH_KEY="$HOME/.ssh/bazzite"
+  if [ ! -f /run/ostree-booted ]; then
+    SSH_KEY="$HOME/.ssh/fedora"
+  fi
+
   if [ ! -f "$SSH_KEY" ]; then
-    echo "🚀 Creating SSH key 'bazzite'..."
+    echo "🚀 Creating SSH key $SSH_KEY..."
     ssh-keygen -t ed25519 -C "josemiguelo.ochoa@gmail.com" -f "$SSH_KEY" -N ""
     eval "$(ssh-agent -s)"
     ssh-add "$SSH_KEY"
-    echo "✅ Done creating SSH key 'bazzite'"
+    echo "✅ Done creating SSH key $SSH_KEY"
   else
-    echo "⚠️ SSH key 'bazzite' already exists."
+    echo "⚠️ SSH key $SSH_KEY already exists."
   fi
 
   SSH_CONFIG="$HOME/.ssh/config"
