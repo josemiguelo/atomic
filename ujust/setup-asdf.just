@@ -19,10 +19,19 @@ setup-asdf:
   else
     echo "🚀 asdf not found. Starting installation of v${ASDF_VERSION}..."
 
+    case $(uname -s) in
+    Linux) OS_TYPE="linux" ;;
+    Darwin) OS_TYPE="darwin" ;;
+    *)
+      echo "❌ Unsupported OS: $(uname -s)"
+      exit 1
+      ;;
+    esac
+
     ARCH=$(uname -m)
     case ${ARCH} in
-    x86_64) ARCH_TYPE="amd64" ;;
-    aarch64) ARCH_TYPE="arm64" ;;
+    x86_64 | amd64) ARCH_TYPE="amd64" ;;
+    aarch64 | arm64) ARCH_TYPE="arm64" ;;
     *)
       echo "❌ Unsupported architecture: ${ARCH}"
       exit 1
@@ -32,7 +41,7 @@ setup-asdf:
     mkdir -p "$BIN_DIR"
     mkdir -p "$ASDF_DATA_DIR"/{installs,plugins,shims}
 
-    URL="https://github.com/asdf-vm/asdf/releases/download/v${ASDF_VERSION}/asdf-v${ASDF_VERSION}-linux-${ARCH_TYPE}.tar.gz"
+    URL="https://github.com/asdf-vm/asdf/releases/download/v${ASDF_VERSION}/asdf-v${ASDF_VERSION}-${OS_TYPE}-${ARCH_TYPE}.tar.gz"
 
     echo "🚀 Downloading from: ${URL}"
     curl -sSL "$URL" | tar -xz -C "$BIN_DIR" asdf

@@ -3,7 +3,11 @@ download-fonts:
   #!/bin/bash
   set -ex
 
-  fonts_target_path=~/.local/share/fonts
+  if [[ "$(uname)" == "Darwin" ]]; then
+    fonts_target_path=~/Library/Fonts
+  else
+    fonts_target_path=~/.local/share/fonts
+  fi
 
   # Check if FiraCode fonts are already installed
   if ls "$fonts_target_path"/Fira\ Code* 1>/dev/null 2>&1; then
@@ -24,7 +28,10 @@ download-fonts:
   mkdir -p $fonts_target_path
   cp $TEMP_DIR/FiraCode/Fira\ Code* $fonts_target_path/
 
-  echo "updating fonts cache..."
-  fc-cache -fv
+  # macOS registers fonts placed in ~/Library/Fonts automatically; fc-cache only exists on Linux.
+  if [[ "$(uname)" != "Darwin" ]]; then
+    echo "updating fonts cache..."
+    fc-cache -fv
+  fi
 
   echo "✅ FiraCode fonts installed."
